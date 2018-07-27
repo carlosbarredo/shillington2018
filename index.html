@@ -1,0 +1,400 @@
+<html>
+
+<head>
+
+<title>Carlos Barredo</title>
+
+<link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
+
+<style type="text/css">
+
+html {
+  margin: 0;
+}
+
+body {
+  font-family: 'Francois One', sans-serif;
+  text-transform: uppercase;
+  margin: 0;
+  text-align: center;
+  background: #fffafa;
+}
+
+h1 {
+  font-size: 82px;
+}
+
+p, h2 {
+  font-size: 38px;
+}
+
+#controlContainer {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+}
+
+#control {
+  background: #35B089;
+  display: inline-block;
+  margin: 0 auto 15px;
+  color: #ffffff;
+  padding: 8px 42px 7px;
+  cursor: pointer;
+}
+
+#center {
+  width: 500px;
+  height: 700px;
+  background: #cccccc;
+  margin: 10px auto;
+  position: relative;
+  background: url(background.png) no-repeat -250px 0;
+}
+
+#left, #right {
+  width: 250px;
+  height: 700px;
+  position: absolute;
+  top: 0;
+}
+
+#left {
+  left: -250px;
+  background: url(background.png) no-repeat 0 0;
+}
+
+#right {
+  right: -250px;
+  background: url(background.png) no-repeat -750px 0;
+}
+
+.rightin {
+  animation: rightIn 0.5s ease-out forwards;
+}
+
+.leftin {
+  animation: leftIn 0.5s ease-out forwards;
+}
+
+.rightout {
+  animation: rightOut 0.5s ease-out forwards;
+}
+
+.leftout {
+  animation: leftOut 0.5s ease-out forwards;
+}
+
+@keyframes leftIn {
+  0% {left: -250px;}
+  100% {left: 0;}
+}
+
+@keyframes rightIn {
+  0% {right: -250px;}
+  100% {right: 0;}
+}
+
+@keyframes leftOut {
+  0% {left: 0;}
+  100% {left: -250px;}
+}
+
+@keyframes rightOut {
+  0% {right: 0;}
+  100% {right: -250px;}
+}
+
+/* 2 */
+
+#controlContainer2 {
+  width: 100%;
+  text-align: center;
+}
+
+#control2 {
+  background: #F33C5E;
+  display: inline-block;
+  margin: 0 auto 15px;
+  color: #ffffff;
+  padding: 8px 42px 7px;
+  cursor: pointer;
+}
+
+#center2 {
+  width: 500px;
+  height: 700px;
+  background: #cccccc;
+  margin: 10px auto;
+  position: relative;
+  background: url(background2.png) no-repeat -250px 0;
+}
+
+#left2, #right2 {
+  width: 250px;
+  height: 700px;
+  position: absolute;
+  top: 0;
+}
+
+#left2 {
+  left: -250px;
+  background: url(background2.png) no-repeat 0 0;
+}
+
+#right2 {
+  right: -250px;
+  background: url(background2.png) no-repeat -750px 0;
+}
+
+/* 3 */
+
+#controlContainer3 {
+  width: 100%;
+  text-align: center;
+}
+
+#control3 {
+  background: #5E63E9;
+  display: inline-block;
+  margin: 0 auto 15px;
+  color: #ffffff;
+  padding: 8px 42px 7px;
+  cursor: pointer;
+}
+
+#center3 {
+  width: 500px;
+  height: 700px;
+  background: #cccccc;
+  margin: 10px auto;
+  position: relative;
+  background: url(background3.png) no-repeat -250px 0;
+}
+
+#left3, #right3 {
+  width: 250px;
+  height: 700px;
+  position: absolute;
+  top: 0;
+}
+
+#left3 {
+  left: -250px;
+  background: url(background3.png) no-repeat 0 0;
+}
+
+#right3 {
+  right: -250px;
+  background: url(background3.png) no-repeat -750px 0;
+}
+
+#counter1 {
+  position: relative;
+}
+
+#counter1::before {
+  content: "1";
+  width: 48px;
+  height: 48px;
+  background: #35B089;
+  font-size: 32px;
+  text-align: center;
+  line-height: 48px;
+  display: block;
+  border-radius: 50%;
+  border: 5px solid #fffafa;
+  color: #ffffff;
+  position: absolute;
+  top: -26px;
+  left: 478px;
+}
+
+#counter2 {
+  position: relative;
+}
+
+#counter2::before {
+  content: "2";
+  width: 48px;
+  height: 48px;
+  background: #F33C5E;
+  font-size: 32px;
+  text-align: center;
+  line-height: 48px;
+  display: block;
+  border-radius: 50%;
+  border: 5px solid #fffafa;
+  color: #ffffff;
+  position: absolute;
+  top: -26px;
+  left: 478px;
+}
+
+#counter3 {
+  position: relative;
+}
+
+#counter3::before {
+  content: "3";
+  width: 48px;
+  height: 48px;
+  background: #5E63E9;
+  font-size: 32px;
+  text-align: center;
+  line-height: 48px;
+  display: block;
+  border-radius: 50%;
+  border: 5px solid #fffafa;
+  color: #ffffff;
+  position: absolute;
+  top: -26px;
+  left: 478px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<script language="javascript">
+
+function myFunction()
+{
+  var control = document.getElementById('control');
+  var status = control.getAttribute('data-control-state');
+
+  if (status == "in") {
+
+    document.getElementById('left').classList.remove("leftin");
+    document.getElementById('right').classList.remove("rightin");
+    document.getElementById('left').classList.add("leftout");
+    document.getElementById('right').classList.add("rightout");
+    document.getElementById('control').innerHTML = "CLICK HERE"
+    control.setAttribute('data-control-state', 'out');
+  }
+
+  else {
+    document.getElementById('left').classList.remove("leftout");
+    document.getElementById('right').classList.remove("rightout");
+    document.getElementById('left').classList.add("leftin");
+    document.getElementById('right').classList.add("rightin");
+    document.getElementById('control').innerHTML = "CLICK HERE"
+    control.setAttribute('data-control-state', 'in');
+  }
+
+}
+
+function myFunction2()
+{
+  var control = document.getElementById('control2');
+  var status = control.getAttribute('data-control-state2');
+
+  if (status == "in") {
+
+    document.getElementById('left2').classList.remove("leftin");
+    document.getElementById('right2').classList.remove("rightin");
+    document.getElementById('left2').classList.add("leftout");
+    document.getElementById('right2').classList.add("rightout");
+    document.getElementById('control2').innerHTML = "CLICK HERE"
+    control.setAttribute('data-control-state2', 'out');
+  }
+
+  else {
+    document.getElementById('left2').classList.remove("leftout");
+    document.getElementById('right2').classList.remove("rightout");
+    document.getElementById('left2').classList.add("leftin");
+    document.getElementById('right2').classList.add("rightin");
+    document.getElementById('control2').innerHTML = "CLICK HERE"
+    control.setAttribute('data-control-state2', 'in');
+  }
+
+}
+
+function myFunction3()
+{
+  var control = document.getElementById('control3');
+  var status = control.getAttribute('data-control-state3');
+
+  if (status == "in") {
+
+    document.getElementById('left3').classList.remove("leftin");
+    document.getElementById('right3').classList.remove("rightin");
+    document.getElementById('left3').classList.add("leftout");
+    document.getElementById('right3').classList.add("rightout");
+    document.getElementById('control3').innerHTML = "CLICK HERE"
+    control.setAttribute('data-control-state3', 'out');
+  }
+
+  else {
+    document.getElementById('left3').classList.remove("leftout");
+    document.getElementById('right3').classList.remove("rightout");
+    document.getElementById('left3').classList.add("leftin");
+    document.getElementById('right3').classList.add("rightin");
+    document.getElementById('control3').innerHTML = "CLICK HERE"
+    control.setAttribute('data-control-state3', 'in');
+  }
+
+}
+</script>
+
+<div style="background: #000000; color: #ffffff; padding: 70px 0;">
+  <h1>Carlos Barredo</h1>
+  <p>September 2018 Shillington Scholarships Application</p>
+</div>
+
+
+<!-- ONE -->
+
+<div id="counter1" style="width: 1000px; margin: 80px auto 0; height: 3px; background: #35B089;"></div>
+
+<div style="padding: 60px 0; width: 1000px; margin: 0 auto;">
+  <div id="controlContainer">
+    <div id="control" onclick="myFunction();" data-control-state="out">CLICK HERE</div>
+  </div>
+  <div>
+    <div id="center">
+      <div id="left"></div>
+      <div id="right"></div>
+    </div>
+  </div>
+</div>
+
+<!-- TWO -->
+
+<div id="counter2" style="width: 1000px; margin: 40px auto 0; height: 3px; background: #F33C5E;"></div>
+
+<div style="padding: 80px 0;  width: 1000px; margin: 0 auto;">
+  <div id="controlContainer2">
+    <div id="control2" onclick="myFunction2();" data-control-state="out">CLICK HERE</div>
+  </div>
+  <div>
+    <div id="center2">
+      <div id="left2"></div>
+      <div id="right2"></div>
+    </div>
+  </div>
+</div>
+
+<!-- THREE -->
+
+<div id="counter3" style="width: 1000px; margin: 40px auto 0; height: 3px; background: #5E63E9;"></div>
+
+<div style="padding: 80px 0; width: 1000px; margin: 0 auto;">
+  <div id="controlContainer3">
+    <div id="control3" onclick="myFunction3();" data-control-state="out">CLICK HERE</div>
+  </div>
+  <div>
+    <div id="center3">
+      <div id="left3"></div>
+      <div id="right3"></div>
+    </div>
+  </div>
+</div>
+
+<div style="background: #000000; color: #ffffff; padding: 60px 30px;">
+  <h2>Thank You!</h2>
+</div>
+
+</body>

@@ -4,7 +4,7 @@
 
 <title>Carlos Barredo</title>
 
-<link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:700" rel="stylesheet">
 
 <style type="text/css">
 
@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  font-family: 'Francois One', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   text-transform: uppercase;
   margin: 0;
   text-align: center;
@@ -31,7 +31,7 @@ p, h2 {
 #controlContainer {
   width: 100%;
   text-align: center;
-  font-size: 18px;
+  font-size: 22px;
 }
 
 #control {
@@ -39,15 +39,16 @@ p, h2 {
   display: inline-block;
   margin: 0 auto 15px;
   color: #ffffff;
-  padding: 8px 42px 7px;
+  padding: 8px 44px 7px;
   cursor: pointer;
+  position: relative;
 }
 
 #center {
   width: 500px;
   height: 700px;
   background: #cccccc;
-  margin: 10px auto;
+  margin: 30px auto 80px;
   position: relative;
   background: url(background.png) no-repeat -250px 0;
 }
@@ -110,6 +111,7 @@ p, h2 {
 #controlContainer2 {
   width: 100%;
   text-align: center;
+  font-size: 22px;
 }
 
 #control2 {
@@ -119,13 +121,14 @@ p, h2 {
   color: #ffffff;
   padding: 8px 42px 7px;
   cursor: pointer;
+  position: relative;
 }
 
 #center2 {
   width: 500px;
   height: 700px;
   background: #cccccc;
-  margin: 10px auto;
+  margin: 30px auto 80px;
   position: relative;
   background: url(background2.png) no-repeat -250px 0;
 }
@@ -152,6 +155,7 @@ p, h2 {
 #controlContainer3 {
   width: 100%;
   text-align: center;
+  font-size: 22px;
 }
 
 #control3 {
@@ -161,13 +165,49 @@ p, h2 {
   color: #ffffff;
   padding: 8px 42px 7px;
   cursor: pointer;
+  position: relative;
+}
+
+.arrow-left {
+  background: url(arrow-left.png);
+  display: block;
+  height: 22px;
+  width: 12px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  animation: arrow-leftAni 0.7s infinite;
+}
+
+@keyframes arrow-leftAni {
+  0% {left: 10px;}
+  50% {left:20px;}
+  100% {left: 10px;}
+}
+
+.arrow-right {
+  background: url(arrow-right.png);
+  display: block;
+  height: 22px;
+  width: 12px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  animation: arrow-rightAni 0.7s infinite;
+
+}
+
+@keyframes arrow-rightAni {
+  0% {right: 10px;}
+  50% {right:20px;}
+  100% {right: 10px;}
 }
 
 #center3 {
   width: 500px;
   height: 700px;
   background: #cccccc;
-  margin: 10px auto;
+  margin: 30px auto 80px;
   position: relative;
   background: url(background3.png) no-repeat -250px 0;
 }
@@ -207,7 +247,7 @@ p, h2 {
   color: #ffffff;
   position: absolute;
   top: -26px;
-  left: 478px;
+  left: 472px;
 }
 
 #counter2 {
@@ -228,7 +268,7 @@ p, h2 {
   color: #ffffff;
   position: absolute;
   top: -26px;
-  left: 478px;
+  left: 472px;
 }
 
 #counter3 {
@@ -249,7 +289,7 @@ p, h2 {
   color: #ffffff;
   position: absolute;
   top: -26px;
-  left: 478px;
+  left: 472px;
 }
 
 </style>
@@ -271,7 +311,7 @@ function myFunction()
     document.getElementById('right').classList.remove("rightin");
     document.getElementById('left').classList.add("leftout");
     document.getElementById('right').classList.add("rightout");
-    document.getElementById('control').innerHTML = "CLICK HERE"
+    document.getElementById('control').innerHTML = "<div class='arrow-left'></div>CLICK HERE<div class='arrow-right'></div>"
     control.setAttribute('data-control-state', 'out');
   }
 
@@ -280,7 +320,7 @@ function myFunction()
     document.getElementById('right').classList.remove("rightout");
     document.getElementById('left').classList.add("leftin");
     document.getElementById('right').classList.add("rightin");
-    document.getElementById('control').innerHTML = "CLICK HERE"
+    document.getElementById('control').innerHTML = "<div class='arrow-left'></div>CLICK HERE<div class='arrow-right'></div>"
     control.setAttribute('data-control-state', 'in');
   }
 
@@ -297,7 +337,7 @@ function myFunction2()
     document.getElementById('right2').classList.remove("rightin");
     document.getElementById('left2').classList.add("leftout");
     document.getElementById('right2').classList.add("rightout");
-    document.getElementById('control2').innerHTML = "CLICK HERE"
+    document.getElementById('control2').innerHTML = "<div class='arrow-left'></div>CLICK HERE<div class='arrow-right'></div>"
     control.setAttribute('data-control-state2', 'out');
   }
 
@@ -306,7 +346,7 @@ function myFunction2()
     document.getElementById('right2').classList.remove("rightout");
     document.getElementById('left2').classList.add("leftin");
     document.getElementById('right2').classList.add("rightin");
-    document.getElementById('control2').innerHTML = "CLICK HERE"
+    document.getElementById('control2').innerHTML = "<div class='arrow-left'></div>CLICK HERE<div class='arrow-right'></div>"
     control.setAttribute('data-control-state2', 'in');
   }
 
@@ -323,7 +363,7 @@ function myFunction3()
     document.getElementById('right3').classList.remove("rightin");
     document.getElementById('left3').classList.add("leftout");
     document.getElementById('right3').classList.add("rightout");
-    document.getElementById('control3').innerHTML = "CLICK HERE"
+    document.getElementById('control3').innerHTML = "<div class='arrow-left'></div>CLICK HERE<div class='arrow-right'></div>"
     control.setAttribute('data-control-state3', 'out');
   }
 
@@ -332,7 +372,7 @@ function myFunction3()
     document.getElementById('right3').classList.remove("rightout");
     document.getElementById('left3').classList.add("leftin");
     document.getElementById('right3').classList.add("rightin");
-    document.getElementById('control3').innerHTML = "CLICK HERE"
+    document.getElementById('control3').innerHTML = "<div class='arrow-left'></div>CLICK HERE<div class='arrow-right'></div>"
     control.setAttribute('data-control-state3', 'in');
   }
 
@@ -347,11 +387,11 @@ function myFunction3()
 
 <!-- ONE -->
 
-<div id="counter1" style="width: 1000px; margin: 80px auto 0; height: 3px; background: #35B089;"></div>
+<div id="counter1" style="width: 1000px; margin: 80px auto 60px; height: 3px; background: #35B089;"></div>
 
-<div style="padding: 60px 0; width: 1000px; margin: 0 auto;">
+<div style="width: 1000px; margin: 0 auto;">
   <div id="controlContainer">
-    <div id="control" onclick="myFunction();" data-control-state="out">CLICK HERE</div>
+    <div id="control" onclick="myFunction();" data-control-state="out"><div class="arrow-left"></div>CLICK HERE<div class="arrow-right"></div>
   </div>
   <div>
     <div id="center">
@@ -363,11 +403,11 @@ function myFunction3()
 
 <!-- TWO -->
 
-<div id="counter2" style="width: 1000px; margin: 40px auto 0; height: 3px; background: #F33C5E;"></div>
+<div id="counter2" style="width: 1000px; margin: 40px auto 60px; height: 3px; background: #F33C5E;"></div>
 
-<div style="padding: 80px 0;  width: 1000px; margin: 0 auto;">
+<div style="width: 1000px; margin: 0 auto;">
   <div id="controlContainer2">
-    <div id="control2" onclick="myFunction2();" data-control-state="out">CLICK HERE</div>
+    <div id="control2" onclick="myFunction2();" data-control-state="out"><div class="arrow-left"></div>CLICK HERE<div class="arrow-right"></div></div>
   </div>
   <div>
     <div id="center2">
@@ -379,11 +419,11 @@ function myFunction3()
 
 <!-- THREE -->
 
-<div id="counter3" style="width: 1000px; margin: 40px auto 0; height: 3px; background: #5E63E9;"></div>
+<div id="counter3" style="width: 1000px; margin: 40px auto 60px; height: 3px; background: #5E63E9;"></div>
 
-<div style="padding: 80px 0; width: 1000px; margin: 0 auto;">
+<div style="width: 1000px; margin: 0 auto;">
   <div id="controlContainer3">
-    <div id="control3" onclick="myFunction3();" data-control-state="out">CLICK HERE</div>
+    <div id="control3" onclick="myFunction3();" data-control-state="out"><div class="arrow-left"></div>CLICK HERE<div class="arrow-right"></div></div>
   </div>
   <div>
     <div id="center3">
@@ -392,7 +432,7 @@ function myFunction3()
     </div>
   </div>
 </div>
-
+</div>
 <div style="background: #000000; color: #ffffff; padding: 60px 30px;">
   <h2>Thank You!</h2>
 </div>
